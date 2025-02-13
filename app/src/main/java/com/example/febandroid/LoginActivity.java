@@ -2,6 +2,7 @@ package com.example.febandroid;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         edtxtmobile=findViewById(R.id.edmobile);
         edtpassword=findViewById(R.id.edtpassword);
         btnsignin=findViewById(R.id.btnsignin);
-
+        SharedPreferences sharedPreferences=getSharedPreferences("MyPref",MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
         btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,7 +37,9 @@ public class LoginActivity extends AppCompatActivity {
                 String password=edtpassword.getText().toString();
                 if (userId.equals("9876543210") && password.equals("12345")){
                     Log.e("Login","Login Success to Home Screen");
-                    Intent intent=new Intent(getApplicationContext(), ActivityLifecycle.class);
+                    editor.putString("login_status","true");
+                    editor.commit();
+                    Intent intent=new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(),"Login Succesful",Toast.LENGTH_LONG).show();
                 }else {
