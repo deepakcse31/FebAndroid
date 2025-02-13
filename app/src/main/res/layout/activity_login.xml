@@ -39,6 +39,7 @@
         android:layout_marginTop="5dp"
         android:hint="Enter Password"
         android:inputType="textPassword"
+        android:id="@+id/edtpassword"
         />
     <Button
         android:layout_width="match_parent"
@@ -47,5 +48,6 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="20dp"
         android:text="Signin"
+        android:id="@+id/btnsignin"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
