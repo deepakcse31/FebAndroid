@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.animation.Animation;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences=getSharedPreferences("MyPref",MODE_PRIVATE);
                 String loginStatus=sharedPreferences.getString("login_status","false");
                 if (loginStatus.equals("true")){
-                    Intent intent=new Intent(getApplicationContext(),AmountActivity.class);
+                    Intent intent=new Intent(getApplicationContext(), AnimationActivity.class);
                     startActivity(intent);
                 }
                 else {

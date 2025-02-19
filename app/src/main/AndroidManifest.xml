@@ -15,6 +15,12 @@
         android:theme="@style/Theme.FebAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".AnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BroadCastActivity"
+            android:exported="false" />
+        <activity
             android:name=".AmountRecived"
             android:exported="false" />
         <activity
