@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FebAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ShareMediaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimePickerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DateActivity"
+            android:exported="false" />
+        <activity
             android:name=".AnimationActivity"
             android:exported="false" />
         <activity
