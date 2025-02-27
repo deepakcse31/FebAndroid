@@ -1,5 +1,6 @@
 package com.example.febandroid;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    List<MyListData> listData;
-    public RecyclerViewAdapter(List<MyListData> listData) {
+    List<Search> listData;
+    private Context context;
+    public RecyclerViewAdapter(List<Search> listData,Context context) {
         this.listData = listData;
+        this.context=context;
     }
 
     @NonNull
@@ -28,9 +33,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-        holder.tvName.setText(listData.get(position).getName());
-        holder.tvDes.setText(listData.get(position).getDes());
-       // holder.imageView.setImageResource(listData.get(position).getImg());
+        holder.tvName.setText(listData.get(position).getTitle());
+        holder.tvDes.setText(listData.get(position).getType());
+        Glide.with(context).load(listData.get(position).getPoster()).into(holder.imageView);
+
+        // holder.imageView.setImageResource(listData.get(position).getImg());
 
     }
 
