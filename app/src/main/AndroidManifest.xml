@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FebAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".PhoneActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewPagerActivity"
             android:exported="false" />
         <activity
