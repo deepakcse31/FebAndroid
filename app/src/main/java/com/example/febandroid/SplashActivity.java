@@ -26,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 if (islogin.equals("true"))
                 {
-                    Intent intent=new Intent(SplashActivity.this,PaymentActivity.class);
+                    Intent intent=new Intent(SplashActivity.this,RecyclerViewActivity.class);
                     startActivity(intent);
                 }else{
                     Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
